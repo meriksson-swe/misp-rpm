@@ -173,6 +173,15 @@ systemctl start php83-php-fpm
 ```
 # enable supervisord at startup
 systemctl enable --now supervisord
+systemctl start supervisord
+
+If not all workers are running when you check status
+# supervisorctl status
+
+Then run these and check again 
+# supervisorctl reread
+# supervisorctl update
+# supervisorctl restart misp-workers:*
 ```
 
 
