@@ -200,6 +200,12 @@ dnf install misp-modules
 # enable misp-modules at startup
 systemctl enable misp-modules
 systemctl start misp-modules
+
+I had problems installing misp-modules.
+1. Missing dependency poppler-cpp. Downloaded it from https://www.rpmfind.net/linux/almalinux/8.10/PowerTools/x86_64/os/Packages/poppler-cpp-20.11.0-11.el8.x86_64.rpm and installed it locally with
+    # dnf localinstall ./poppler-cpp-20.11.0-11.el8.x86_64.rpm
+2. Unsigned package misp-modules-3.0.5. Installed earlier version instead
+    # dnf install misp-modules-3.0.3
 ```
 
 - **reboot the host to make sure all services are started correctly**
